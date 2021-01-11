@@ -13,10 +13,12 @@ import java.io.File;
  */
 public class PathConstraints {
 
-    private PathConstraints() {}
+    private PathConstraints() {
+    }
 
     /**
      * 获取图片缓存绝对路径
+     *
      * @param context
      * @return
      */
@@ -24,7 +26,7 @@ public class PathConstraints {
         String directoryPath;
         // 判断外部存储是否可用，如果不可用则使用内部存储路径
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            directoryPath = context.getExternalCacheDir().getAbsolutePath();
+            directoryPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         } else { // 使用内部存储缓存目录
             directoryPath = context.getCacheDir().getAbsolutePath();
         }
@@ -38,6 +40,7 @@ public class PathConstraints {
 
     /**
      * 获取视频缓存绝对路径
+     *
      * @param context
      * @return
      */
@@ -45,7 +48,7 @@ public class PathConstraints {
         String directoryPath;
         // 判断外部存储是否可用，如果不可用则使用内部存储路径
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            directoryPath = context.getExternalCacheDir().getAbsolutePath();
+            directoryPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         } else { // 使用内部存储缓存目录
             directoryPath = context.getCacheDir().getAbsolutePath();
         }
@@ -59,6 +62,7 @@ public class PathConstraints {
 
     /**
      * 获取音频缓存绝对路径
+     *
      * @param context
      * @return
      */
@@ -80,6 +84,7 @@ public class PathConstraints {
 
     /**
      * 获取视频缓存绝对路径
+     *
      * @param context
      * @return
      */

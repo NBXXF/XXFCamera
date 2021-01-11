@@ -29,6 +29,7 @@
         android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".BaseApplication"
         android:theme="@style/NoActionBarTheme">
         <activity android:name=".activity.DuetRecordActivity" />
         <activity android:name=".activity.VideoPlayerActivity"/>
