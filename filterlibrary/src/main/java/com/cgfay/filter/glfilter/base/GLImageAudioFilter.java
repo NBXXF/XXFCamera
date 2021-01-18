@@ -208,7 +208,7 @@ public class GLImageAudioFilter extends GLImageFilter {
     /**
      * 播放器状态枚举
      */
-    private enum PlayerStatus {
+    public enum PlayerStatus {
 
         RELEASE("release", 0),
         INIT("init", 1),
