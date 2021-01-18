@@ -5,6 +5,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 
+import androidx.annotation.CheckResult;
+import androidx.annotation.Nullable;
+
 import com.cgfay.filter.audioplayer.AutoFocusPlayer;
 
 import java.io.IOException;
@@ -31,6 +34,16 @@ public class GLImageAudioFilter extends GLImageFilter {
         super(context, vertexShader, fragmentShader);
     }
 
+    public PlayerStatus getPlayerStatus() {
+        return mPlayerStatus;
+    }
+
+    @Nullable
+    @CheckResult
+    public MediaPlayer getAudioPlayer() {
+        return mAudioPlayer;
+    }
+
     @Override
     public void release() {
         super.release();
@@ -39,6 +52,7 @@ public class GLImageAudioFilter extends GLImageFilter {
 
     /**
      * 设置音乐路径
+     *
      * @param path
      */
     public void setAudioPath(String path) {
@@ -47,6 +61,7 @@ public class GLImageAudioFilter extends GLImageFilter {
 
     /**
      * 设置音乐路径
+     *
      * @param uri
      */
     public void setAudioPath(Uri uri) {
@@ -55,6 +70,7 @@ public class GLImageAudioFilter extends GLImageFilter {
 
     /**
      * 设置是否循环播放
+     *
      * @param looping
      */
     public void setLooping(boolean looping) {
@@ -63,6 +79,7 @@ public class GLImageAudioFilter extends GLImageFilter {
 
     /**
      * 是否循环播放
+     *
      * @return
      */
     public boolean isLooping() {
